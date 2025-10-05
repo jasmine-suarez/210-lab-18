@@ -85,7 +85,9 @@ void addTail(Node *&head, double rating, string comment) {
     }
 }
 
-// output() traverses linked list, outputs reviews, and calculates a
+// output() traverses linked list, outputs reviews, and calculates average rating
+// arguments: head
+// returns: nothing
 void output(Node *head) {
     Node* current = head;
     int count = 0;
