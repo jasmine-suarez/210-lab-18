@@ -10,8 +10,12 @@ struct Node {
     Node *next;
 };
 
+// function prototypes
+void addFront(Node *&, double, string);
+void addTail(Node *&, double, string);
+
 int main() {
-   
+    Node *head = nullptr;
     int choice;
 
     cout << "Which linked list method should we use?" << endl;
@@ -22,4 +26,12 @@ int main() {
     cin.ignore();
 
     return 0;
+}
+
+void addFront(Node *&head, double rating, string comment) {
+
+}
+
+void addTail(Node *&head, double rating, string comment) {
+
 }
