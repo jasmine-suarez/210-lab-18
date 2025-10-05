@@ -41,4 +41,15 @@ void addTail(Node *&head, double rating, string comment) {
     newNode->rating = rating;
     newNode->comment = comment;
     newNode->next = nullptr;
+
+    if (head == nullptr) {
+        head = newNode;
+    }
+    else {
+        Node *current = head;
+        while (current->next != nullptr)
+            current = current->next;
+
+        current->next = newNode;
+    }
 }
