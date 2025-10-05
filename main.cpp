@@ -53,6 +53,9 @@ int main() {
     return 0;
 }
 
+// addFront() adds a review node to head of linked list.
+// arguments: head, rating, comment
+// returns: nothing
 void addFront(Node *&head, double rating, string comment) {
     Node *newNode = new Node;
     newNode->rating = rating;
@@ -61,6 +64,9 @@ void addFront(Node *&head, double rating, string comment) {
     head = newNode;
 }
 
+// addTail() adds a review node to tail of linked list.
+// arguments: head, rating, comment
+// returns: nothing
 void addTail(Node *&head, double rating, string comment) {
     Node *newNode = new Node;
     newNode->rating = rating;
@@ -79,6 +85,7 @@ void addTail(Node *&head, double rating, string comment) {
     }
 }
 
+// output() traverses linked list, outputs reviews, and calculates a
 void output(Node *head) {
     Node* current = head;
     int count = 0;
@@ -87,8 +94,12 @@ void output(Node *head) {
     cout << "Outputting all reviews:" << endl;
     while (current != nullptr) {
         count++;
-        cout << "Review #" << count + 1 << ": " << current->rating
+        cout << "\t> Review #" << count << ": " << current->rating
              << ": " << current->comment << endl;
-             
+        
+        total += current->rating;
+        current = current->next;
     }
+
+    cout << "\t> Average: " << total / count << endl;
 }
