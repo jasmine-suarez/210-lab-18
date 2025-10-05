@@ -13,6 +13,7 @@ struct Node {
 // function prototypes
 void addFront(Node *&, double, string);
 void addTail(Node *&, double, string);
+void output(Node *);
 
 int main() {
     Node *head = nullptr;
@@ -42,9 +43,12 @@ int main() {
         else
             addTail(head, rating, comment);
 
-        
+        cout << "Enter another review? Y/N: ";
+        cin >> inputMore;
+        cin.ignore();
     }
 
+    output(head);
 
     return 0;
 }
@@ -72,5 +76,19 @@ void addTail(Node *&head, double rating, string comment) {
             current = current->next;
 
         current->next = newNode;
+    }
+}
+
+void output(Node *head) {
+    Node* current = head;
+    int count = 0;
+    double total = 0;
+
+    cout << "Outputting all reviews:" << endl;
+    while (current != nullptr) {
+        count++;
+        cout << "Review #" << count + 1 << ": " << current->rating
+             << ": " << current->comment << endl;
+             
     }
 }
