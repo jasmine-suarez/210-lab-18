@@ -25,6 +25,27 @@ int main() {
     cin >> choice;
     cin.ignore();
 
+    char inputMore = 'Y';
+    while (inputMore == 'Y' || inputMore == 'y') {
+        double rating;
+        string comment;
+
+        cout << "Enter review rating 0-5: ";
+        cin >> rating;
+        cin.ignore();
+
+        cout << "Enter review comments: ";
+        getline(cin, comment);
+
+        if (choice == 1)
+            addFront(head, rating, comment);
+        else
+            addTail(head, rating, comment);
+
+        
+    }
+
+
     return 0;
 }
 
