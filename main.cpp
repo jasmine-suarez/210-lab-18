@@ -33,8 +33,12 @@ void addFront(Node *&head, double rating, string comment) {
     newNode->rating = rating;
     newNode->comment = comment;
     newNode->next = head;
+    head = newNode;
 }
 
 void addTail(Node *&head, double rating, string comment) {
-
+    Node *newNode = new Node;
+    newNode->rating = rating;
+    newNode->comment = comment;
+    newNode->next = nullptr;
 }
